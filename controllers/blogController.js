@@ -105,7 +105,8 @@ const unpublishBlog = async (req, res) => {
 }
 
 const myDraft = async (req, res) => {
-    const drafts = await Blog.findById({
+    console.log(req.user._id)
+    const drafts = await Blog.find({
         author: req.user._id,
         status: 'draft'
     })

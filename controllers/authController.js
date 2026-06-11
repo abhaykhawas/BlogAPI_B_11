@@ -13,7 +13,7 @@ const register = async (req, res) => {
         })
     }
 
-    const hashedPassword = bcrypt.hash(password, 15)
+    const hashedPassword = await bcrypt.hash(password, 15)
 
     const user = await User.create({
         name,
